@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting</title>
+</head>
+<body>
+    <script>
+        // Get user input for the array
+const inputString = prompt("Enter elements of the array separated by spaces:");
+if (!inputString) {
+    alert("No input provided. Please try again.");
+} else {
+    // Split the user input into an array of elements
+    const inputArray = inputString.split(' ');
+
+    // Convert the elements to numbers (assuming numeric input)
+    const numericArray = inputArray.map(element => parseFloat(element));
+
+    // Check if the conversion was successful for all elements
+    const allValid = numericArray.every(element => !isNaN(element));
+
+    if (allValid) {
+        // Sort the array in descending order
+        numericArray.sort((a, b) => b - a);
+
+        // Display the sorted array
+        alert("Sorted Array (in descending order): " + numericArray.join(' '));
+    } else {
+        alert("Invalid input. Please enter valid numeric elements.");
+    }
+}
+
+    </script>
+</body>
+</html>
